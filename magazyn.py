@@ -10,16 +10,19 @@ items = {
 
 def get_items(towar):
     naglowek = ""
+    value = ""
     for item in towar:
         naglowek += item + '\t'
     return naglowek
 
+
 while True:
-    operation = input("Please enter search criteria, or type 'exit' to exit the program: ")
+    operation = input("Please enter 'show', or type 'exit' to exit the program: ")
     if operation == 'exit':
         print("Koniec operacji...BYE!!!")
         break
     elif operation == "show":
         results = get_items(items)
         print(results)
+        print('----''\t''-------''\t')
 
