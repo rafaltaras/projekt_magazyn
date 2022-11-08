@@ -10,7 +10,6 @@ items = {
 
 def get_items(towar):
     naglowek = ""
-    value = ""
     for item in towar:
         naglowek += item + '\t'
     return naglowek
