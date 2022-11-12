@@ -17,14 +17,21 @@ def get_items(product):
         for key in product.keys():
             print(f"|{product[key][i]:10}|", end='\t')
         print('')
+
+def add_items():
+        name = input('Podaj nazwę towaru: ')
+        unit_name = ('Podaj jednostkę np. kg, l ?: ')
+        quantity = ('Podaj ilość: ')
+        unit_price = ('Podaj cenę jednostkową: ')
+
        
 while True:
     print('')
-    operation = input("Please enter 'show', or type 'exit' to exit the program: ")
+    operation = input("What you want to do: 'show' 'add', or type 'exit' to exit the program: ")
     if operation == 'exit':
         print("Koniec operacji...BYE!!!")
         break
     elif operation == "show":
         results = get_items(items)
-        
-
+    elif operation == "add":
+        results = add_items()
