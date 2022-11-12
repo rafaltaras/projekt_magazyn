@@ -10,12 +10,12 @@ items = {
 def get_items(product):
     headers = ""
     for item in product:
-        headers += item + '\t\t'
+        headers += f"|{item:10}|" + '\t'
     print(headers)
 
     for i in range(0, len(product.values())-1):
         for key in product.keys():
-            print(product[key][i], end='\t\t')
+            print(f"|{product[key][i]:10}|", end='\t')
         print('')
        
 while True:
