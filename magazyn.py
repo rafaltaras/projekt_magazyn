@@ -1,33 +1,49 @@
 
 
-items = {
-    "Name": ['Cebula','Marchew','Pietruszka'],
-    "Quantity": [40,50,20],
-    "Unit": ['kg','kg','kg'],
-    "Unit Price (PLN)": [2.3, 4.1, 5]
+items = [
+    {
+        "name": "cebula",
+        "quantity": 40,
+        "unit": "kg",
+        "unit_price": 2.3
+    },
+    {
+        "name": "marchew",
+        "quantity": 50,
+        "unit": "kg",
+        "unit_price": 4.1
+    },
+    {
+        "name": "pietruszka",
+        "quantity": 20,
+        "unit": "kg",
+        "unit_price": 5
     }
+]
+# print(len(items)-1)
+# lista = ['a',1,'b',2,'c',4]
+# slwo = dict(lista)
+# print(slwo)
 
-# items["Name"].append("Pomidor")
-# x = items["Name"]
-# print(x)
 
-def get_items(product):
-    headers = ""
-    for item in product:
-        headers += f"|{item:10}|" + '\t'
-    print(headers)
-
-    for i in range(0, len(product.values())-1):
-        for key in product.keys():
-            print(f"|{product[key][i]:10}|", end='\t')
-        print('')
+def get_items(items):
+        for item in items[0]:
+            print(f"|{item:10}|", end='\t')
+        print(end='\n')
+                   
+        for item in items:
+            for value in item.values():
+                print(f"|{value:10}|", end='\t')
+            print(end='\n')
 
 def add_items(name, unit_name, quantity, unit_price):
-    items["Name"].append(name)
-    items["Quantity"].append(quantity)
-    items["Unit"].append(unit_name)
-    items["Unit Price (PLN)"].append(unit_price)
-    
+        new_item = {
+            "name": name,
+            "quantity": quantity,
+            "unit": unit_name,
+            "unit_price": unit_price
+            }
+        items.append(new_item)    
 
 
 def sell_items(name, quantity):
