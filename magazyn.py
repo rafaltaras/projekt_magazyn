@@ -20,11 +20,6 @@ items = [
         "unit_price": 5
     }
 ]
-# print(len(items)-1)
-# lista = ['a',1,'b',2,'c',4]
-# slwo = dict(lista)
-# print(slwo)
-
 
 def get_items(items):
         for item in items[0]:
@@ -47,7 +42,12 @@ def add_items(name, unit_name, quantity, unit_price):
 
 
 def sell_items(name, quantity):
-    return
+    for item in items:
+        if item.get('name') == name:
+            current_quantity = item.get("quantity")
+            after_sale = current_quantity - quantity
+            #Dodaj do słwonika
+
        
 while True:
     print('')
@@ -64,9 +64,10 @@ while True:
         unit_price = float(input('Podaj cenę jednostkową: '))
         results = add_items(name, unit_name, quantity, unit_price)
     elif operation == "sell":
-        name = input('Co sprzedajemy: ')
-        if name in items["Name"]:
-             print("Jest")
-        else:
-            print("Brak w magazynie")
+        name = input('Jaki towar sprzedajemy: ')
+        quantity = int(input("Ile sprzedajemy: "))
+        sell_items(name,quantity)
+                
+
+
 
