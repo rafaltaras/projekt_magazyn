@@ -7,6 +7,10 @@ items = {
     "Unit Price (PLN)": [2.3, 4.1, 5]
     }
 
+# items["Name"].append("Pomidor")
+# x = items["Name"]
+# print(x)
+
 def get_items(product):
     headers = ""
     for item in product:
@@ -19,27 +23,16 @@ def get_items(product):
         print('')
 
 def add_items(name, unit_name, quantity, unit_price):
-    for key, value in items.items():
-        if key == "Name":
-            value.append(name)
-        elif key == "Quantity":
-            value.append(quantity)
-        elif key == "Unit":
-            value.append(unit_name)
-        elif key == "Unit Price (PLN)":
-            value.append(unit_price)
-    print("")
-    print('Obency stan magazynu')
-    print('')
-    headers = ""
-    for item in items:
-         headers += f"|{item:10}|" + '\t'
-    print(headers)
+    global items
+    items["Name"].append(name)
+    items["Quantity"].append(quantity)
+    items["Unit"].append(unit_name)
+    items["Unit Price (PLN)"].append(unit_price)
+    
 
-    for i in range(0, len(items.values())):
-        for key in items.keys():
-             print(f"|{items[key][i]:10}|", end='\t')
-        print('')
+
+def sell_items(name, quantity):
+    return
        
 while True:
     print('')
@@ -55,5 +48,10 @@ while True:
         quantity = int(input('Podaj ilość: '))
         unit_price = float(input('Podaj cenę jednostkową: '))
         results = add_items(name, unit_name, quantity, unit_price)
-        
+    elif operation == "sell":
+        name = input('Co sprzedajemy: ')
+        if name in items["Name"]:
+             print("Jest")
+        else:
+            print("Brak w magazynie")
 
