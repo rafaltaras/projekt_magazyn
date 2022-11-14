@@ -23,7 +23,6 @@ def get_items(product):
         print('')
 
 def add_items(name, unit_name, quantity, unit_price):
-    global items
     items["Name"].append(name)
     items["Quantity"].append(quantity)
     items["Unit"].append(unit_name)
