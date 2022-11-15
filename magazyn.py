@@ -42,12 +42,17 @@ def add_items(name, unit_name, quantity, unit_price):
 
 
 def sell_items(name, quantity):
+    position = -1
     for item in items:
+        position += 1
         if item.get('name') == name:
             current_quantity = item.get("quantity")
             after_sale = current_quantity - quantity
-            #Dodaj do słwonika
-
+            new_item = {
+                "quantity": after_sale
+                }
+            items[position].update(new_item)
+            
        
 while True:
     print('')
