@@ -56,7 +56,7 @@ def sell_items(name, quantity):
        
 while True:
     print('')
-    operation = input("What you want to do: 'show' 'add', or type 'exit' to exit the program: ")
+    operation = input("What you want to do: 'show' 'add' 'sell', or type 'exit' to exit the program: ")
     if operation == 'exit':
         print("Koniec operacji...BYE!!!")
         break
